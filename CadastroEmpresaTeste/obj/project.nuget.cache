@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f7MlrqLNs2+JPISGawwpLRW6Jtz0b1aID3WJcTeBevBBfpPa+SEQX8jBnV/Aq9HDGwFby0d9U34tehvqSjuLkA==",
+  "dgSpecHash": "PM+whVeXrHsz2wAHKfsTGtknctSaxNmbpMdjo7t2r3TCqXtvH4twF9LPg7fFIF294IGDpc0a0Ri1eONQkS0tCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Neo\\source\\repos\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\CadastroEmpresaTeste.csproj",
+  "projectFilePath": "C:\\Users\\Neo\\Desktop\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\CadastroEmpresaTeste.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Neo\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

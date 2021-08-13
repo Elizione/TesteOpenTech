@@ -9253,11 +9253,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Neo\\source\\repos\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\CadastroEmpresaTeste.csproj",
+      "projectUniqueName": "C:\\Users\\Neo\\Desktop\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\CadastroEmpresaTeste.csproj",
       "projectName": "CadastroEmpresaTeste",
-      "projectPath": "C:\\Users\\Neo\\source\\repos\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\CadastroEmpresaTeste.csproj",
+      "projectPath": "C:\\Users\\Neo\\Desktop\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\CadastroEmpresaTeste.csproj",
       "packagesPath": "C:\\Users\\Neo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Neo\\source\\repos\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\obj\\",
+      "outputPath": "C:\\Users\\Neo\\Desktop\\CadastroEmpresaTeste\\CadastroEmpresaTeste\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Neo\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CadastroEmpresaTeste.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210813144315_Init")]
+    [Migration("20210813151340_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
