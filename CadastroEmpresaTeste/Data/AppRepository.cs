@@ -26,15 +26,26 @@ namespace CadastroEmpresaTeste.Data
             Context.Remove(entity);
         }
 
-        public async Task<Empresa[]> GetAllEmpresas()
+        public async Task<Empresa[]> GetAllEmpresasAsync()
         {
             IQueryable<Empresa> query = Context.Empresas;
             return await query.ToArrayAsync();
         }
 
-        public async Task<Empresa> GetEmpresa(int id)
+        public Empresa[] GetAllEmpresas()
+        {
+            IQueryable<Empresa> query = Context.Empresas;
+            return query.ToArray();
+        }
+
+        public async Task<Empresa> GetEmpresaAsync(int id)
         {
             return await Context.Empresas.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public Empresa GetEmpresa(int id)
+        {
+            return Context.Empresas.FirstOrDefault(x => x.Id == id);
         }
 
         public async Task<bool> SaveChangesAsync()

@@ -12,9 +12,10 @@ namespace CadastroEmpresaTeste.Data
         void Delete<T>(T entity) where T : class;
         void Update<T>(T entity) where T : class;
 
-        Task<Empresa[]> GetAllEmpresas();
-        Task<Empresa> GetEmpresa(int id);
-
+        Task<Empresa[]> GetAllEmpresasAsync();
+        Empresa[] GetAllEmpresas();
+        Task<Empresa> GetEmpresaAsync(int id);
+        Empresa GetEmpresa(int id);
         Task<bool> SaveChangesAsync();
 
     }

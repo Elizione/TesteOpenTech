@@ -21,42 +21,35 @@ namespace CadastroEmpresaTeste.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var result = await Repository.GetAllEmpresas();
+            var result = await Repository.GetAllEmpresasAsync();
             return View(result);
         }
 
+    
+        
+
+        // [HttpGet("{id}")]
+        // public async Task<IActionResult> Get(int id)
+        // {
+        //     try
+        //     {
+        //         var result = await Repository.GetEmpresaAsync(id);
+        //         return View(result);
+        //     }
+        //     catch (System.Exception)
+        //     {
+        //         return StatusCode(StatusCodes.Status500InternalServerError, "Erro no banco");
+        //     }
+        // }
+
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult CreateEmpresa()
         {
-            try
-            {
-                var result = await Repository.GetAllEmpresas();
-                //return Ok(result);
-                return View(result);
-            }
-            catch (System.Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Erro no banco");
-            }
-
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
-        {
-            try
-            {
-                var result = await Repository.GetEmpresa(id);
-                return View(result);
-            }
-            catch (System.Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Erro no banco");
-            }
+            return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateEmpresa([FromBody] Empresa empresa)
+        public async Task<IActionResult> CreateEmpresa(Empresa empresa)
         {
             try
             {
@@ -66,7 +59,7 @@ namespace CadastroEmpresaTeste.Controllers
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(empresa);
+                return View();
             }
             catch (System.Exception)
             {
@@ -74,15 +67,31 @@ namespace CadastroEmpresaTeste.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEmpresa(int id, [FromBody] Empresa empresa)
+        [HttpGet]
+        public IActionResult UpdateEmpresa(int id)
+        {
+            try
+            {
+                Empresa empresa = Repository.GetEmpresa(id);
+                return View(empresa);
+            }
+            catch (System.Exception)
+            {
+                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro no banco");
+            }
+                
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateEmpresa(int id, Empresa empresa)
         {
             try
             {
                 Repository.Update(empresa);
                 if (await Repository.SaveChangesAsync())
                 {
-                    return View(empresa);
+                    //return View(empresa);
+                    return RedirectToAction(nameof(Index));
                 }
 
                 return BadRequest();
@@ -93,13 +102,30 @@ namespace CadastroEmpresaTeste.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEmpresa(int id)
+
+        [HttpGet]
+        public IActionResult DeleteEmpresa(int id)
         {
             try
             {
-                var p = await Repository.GetEmpresa(id);
-                Repository.Delete(p);
+                Empresa empresa = Repository.GetEmpresa(id);
+                return View(empresa);
+            }
+            catch (System.Exception)
+            {
+                 return StatusCode(StatusCodes.Status500InternalServerError, "Erro no banco");
+            }
+                
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteEmpresa(int id, Empresa empresa)
+        {
+            try
+            {
+                var emp = await Repository.GetEmpresaAsync(id);
+                Repository.Delete(emp);
                 if (await Repository.SaveChangesAsync())
                 {
                     return RedirectToAction(nameof(Index));
